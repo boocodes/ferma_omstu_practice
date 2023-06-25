@@ -1,2 +1,2 @@
-export {default as WelcomePage} from './welcome';
-export {default as PolicyPage} from './policy';
+export * from './welcome';
+export * from './policy';
