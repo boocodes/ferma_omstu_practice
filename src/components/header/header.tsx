@@ -4,14 +4,14 @@ import {HeaderContactInformation} from "./headerContactInformation";
 
 
 interface Props{
-
+    backgroundColor?: string;
 }
 
 
-function Header(props:Props){
+function Header({backgroundColor}:Props){
     return(
         <>
-            <ExternalWrapper>
+            <ExternalWrapper backgroundColor={backgroundColor}>
                 <HeaderLogoWrapper/>
                 <HeaderContactInformation/>
             </ExternalWrapper>
@@ -19,11 +19,18 @@ function Header(props:Props){
     )
 }
 
-const ExternalWrapper = styled.div`
-    padding: 40px 0px;
+
+interface IExternalWrapper {
+    backgroundColor?: string;
+}
+
+
+const ExternalWrapper = styled.div<IExternalWrapper>`
+    padding: 40px 200px;
     display: flex;
     z-index: 3;
     align-items: center;
+    background-color: ${props=>props.backgroundColor || 'none'};
     position: relative;
     justify-content: space-between;
 `

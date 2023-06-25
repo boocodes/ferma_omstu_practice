@@ -2,11 +2,11 @@ import styled from "styled-components";
 import {OfferBanner} from "./offerBanner";
 
 interface Props{
-
+    changeModalFlag: (flag: boolean)=> void;
 }
 
 
-function OfferComponent(props:Props){
+function OfferComponent({changeModalFlag}:Props){
     return(
         <ExternalWrapper>
             <MainOfferText>
@@ -15,7 +15,7 @@ function OfferComponent(props:Props){
             <SubOfferText>
                 5 лет опыта с автотематикой!
             </SubOfferText>
-            <OfferBanner/>
+            <OfferBanner changeModalFlag={changeModalFlag}/>
         </ExternalWrapper>
     )
 }

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Header from '../../components/header/';
 import {OfferComponent} from "../../components";
-
+import {useState} from "react";
+import {UserDataFormModal} from "../../components/modal";
 
 
 interface Props{
@@ -12,12 +13,18 @@ interface Props{
 
 
 function WelcomePage(props:Props){
+
+    const [modalWindowFlag, setModalWindowFlag] = useState(false);
+
     return(
         <>
+            {modalWindowFlag ? <UserDataFormModal changeModalWindowFlag={setModalWindowFlag}/> : null}
             <ExternalWrapper>
                 <Header/>
-                <OfferComponent/>
-                <BlackFadeBackgroundOverlay></BlackFadeBackgroundOverlay>
+                <MainContent>
+                    <OfferComponent changeModalFlag={setModalWindowFlag}/>
+                    <BlackFadeBackgroundOverlay/>
+                </MainContent>
             </ExternalWrapper>
 
         </>
@@ -25,19 +32,15 @@ function WelcomePage(props:Props){
 }
 
 const ExternalWrapper = styled.div`
+    
+    background: url('./images/welcomeBackground.png');
+    
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
-    background: url('./images/welcomeBackground.png');
-    padding-left: 200px;
-    padding-right: 200px;
-    background-repeat: no-repeat;
-    
+    position: relative;
     background-position: 100% 20%;
     z-index: 1;
-`
-
-const BackgroundImage = styled.div`
-    
 `
 
 const BlackFadeBackgroundOverlay = styled.div`
@@ -50,6 +53,9 @@ const BlackFadeBackgroundOverlay = styled.div`
     z-index: 2;
 `
 
+const MainContent = styled.div`
+    padding: 0px 200px;
+`
 
 
 

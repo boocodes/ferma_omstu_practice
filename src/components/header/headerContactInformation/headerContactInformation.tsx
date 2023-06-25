@@ -6,7 +6,7 @@ interface Props{
 }
 
 
-function HeaderContactInformation(props:Props){
+function HeaderContactInformation({}:Props){
     return(
         <ExternalWrapper>
             <PhoneNumber>

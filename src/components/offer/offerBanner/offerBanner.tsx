@@ -2,11 +2,11 @@ import styled from "styled-components";
 import ContactButton from "../../../ui/ringContactButton/ContactButton";
 
 interface Props{
-
+    changeModalFlag: (flag: boolean)=> void;
 }
 
 
-function OfferBanner(props:Props){
+function OfferBanner({changeModalFlag}:Props){
     return(
         <ExternalWrapper>
             <TitleText>Ответье на несколько вопросов и получите:</TitleText>
@@ -16,7 +16,7 @@ function OfferBanner(props:Props){
                 <OptionsElem>3. Рекомендации по повышению конверсии</OptionsElem>
             </OptionsListWrapper>
             <ContactButtonWrapper>
-                <ContactButton buttonText={"Получить"}/>
+                <ContactButton changeModalFlag={changeModalFlag} buttonText={"Получить"}/>
             </ContactButtonWrapper>
         </ExternalWrapper>
     )

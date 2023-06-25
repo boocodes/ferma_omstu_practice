@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 interface Props{
     buttonText: string;
+    changeModalFlag?: (flag: boolean)=> void;
 }
 
-function ContactButton({buttonText}:Props){
+function ContactButton({buttonText, changeModalFlag}:Props){
     return(
-        <Root>
+        <Root onClick={()=> changeModalFlag ? changeModalFlag(true) : null}>
             {buttonText}
         </Root>
     )
