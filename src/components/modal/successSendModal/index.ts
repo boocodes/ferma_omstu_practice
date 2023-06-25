@@ -1,0 +1,1 @@
+export {default as SuccessSendModal} from './successSendModal';

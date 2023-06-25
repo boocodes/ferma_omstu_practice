@@ -2,23 +2,31 @@ import styled from "styled-components";
 import Header from '../../components/header/';
 import {OfferComponent} from "../../components";
 import {useState} from "react";
-import {UserDataFormModal} from "../../components/modal";
+import {SuccessSendModal, UserDataFormModal} from "../../components/modal";
 
 
 interface Props{
 
 }
 
-
+//<UserDataFormModal changeModalWindowFlag={setModalWindowFlag}/> : null
 
 
 function WelcomePage(props:Props){
 
     const [modalWindowFlag, setModalWindowFlag] = useState(false);
+    const [successSendFlag, setSuccessFlag] = useState(false);
 
     return(
         <>
-            {modalWindowFlag ? <UserDataFormModal changeModalWindowFlag={setModalWindowFlag}/> : null}
+            {!modalWindowFlag ?
+                null
+                :
+                successSendFlag ?
+                    <SuccessSendModal changeModalSuccessFlag={setSuccessFlag} changeModalWindowFlag={setModalWindowFlag}/>
+                    :
+                    <UserDataFormModal changeModalSuccessFlag={setSuccessFlag} changeModalWindowFlag={setModalWindowFlag}/>
+            }
             <ExternalWrapper>
                 <Header/>
                 <MainContent>
@@ -28,29 +36,31 @@ function WelcomePage(props:Props){
             </ExternalWrapper>
 
         </>
+
     )
 }
 
 const ExternalWrapper = styled.div`
-    
     background: url('./images/welcomeBackground.png');
-    
-    background-repeat: no-repeat;
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
     position: relative;
     background-position: 100% 20%;
     z-index: 1;
 `
 
+
+
 const BlackFadeBackgroundOverlay = styled.div`
     background: url('./images/welcomeBackgroundImageOverlay.png');
-    width: 100vw;
-    height: 100vh;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
+    height: 100vh;
+    width: 100vw;
 `
 
 const MainContent = styled.div`

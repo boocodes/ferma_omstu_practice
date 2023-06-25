@@ -5,17 +5,19 @@ import {Link} from "react-router-dom";
 
 interface Props{
     changeModalWindowFlag: (flag: boolean) => void;
+    changeModalSuccessFlag: (flag: boolean) => void;
 }
 
 
 
-function UserDataFormModal({changeModalWindowFlag}:Props){
+function UserDataFormModal({changeModalWindowFlag, changeModalSuccessFlag}:Props){
 
     const [successFlag, setSuccessFlag] = useState(false);
 
 
     function handleFormSumbit(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
+        changeModalSuccessFlag(true);
     }
 
 
@@ -26,7 +28,7 @@ function UserDataFormModal({changeModalWindowFlag}:Props){
                     <TitleText>Получите медиаплан<br/> для продвижения автобизнеса</TitleText>
                     <CloseModalIcon onClick={()=>changeModalWindowFlag(false)} src={"./images/closeIcon.svg"}/>
                 </TitleWrapper>
-                <UserDataForm>
+                <UserDataForm onSubmit={handleFormSumbit}>
                     <UsernameInput type={"text"} placeholder={"Представьтесь"}/>
                     <UserphoneInput type={'telt'} placeholder={"+7 (___)___-__-__"}/>
                     <SubmitUserDataFormButton type={"submit"} value={"Получить"}/>
@@ -48,7 +50,7 @@ const ExternalWrapper = styled.div`
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    padding: 30px 20px;
+    padding: 40px 30px;
     border-radius: 20px;
     background-color: white;
     z-index: 5;

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+}
+
+
 @font-face {
   font-family: 'Muller';
   src: url("./../public/fonts/MullerBold.woff") format("woff");
