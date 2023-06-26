@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 
 
@@ -9,10 +10,12 @@ interface Props{
 
 
 
-function HeaderLogoWrapper(props:Props){
+function HeaderLogoWrapper({}:Props){
     return(
         <ExternalWrapper>
-            <FermaLogoIcon src={"./images/fermaLogo.svg"}/>
+            <Link to={"/"}>
+                <FermaLogoIcon src={"./images/fermaLogo.svg"}/>
+            </Link>
             <FermaLogoSubText>
                 рекламное<br/>
                 агенство
@@ -27,11 +30,19 @@ const ExternalWrapper = styled.div`
 `
 const FermaLogoIcon = styled.img`
     margin-right: 10px;
+    @media(max-width: 800px){
+        width: 70px;
+    }
+    
 `
 const FermaLogoSubText = styled.p`
     font-family: 'Muller';
     color: white;
-    font-size: 20px;
+    font-size: 15px;
+    @media(max-width: 800px){
+        margin-bottom: 2px;
+        font-size: 12px;
+    }
 `
 
 
