@@ -27,17 +27,36 @@ const ExternalWrapper = styled.div`
     position: relative;
     z-index: 3;
     color: white;
-    margin-top: 100px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 `
 
 const MainOfferText = styled.h1`
     font-size: 64px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    @media(max-width: 1500px){
+        font-size: 48px;
+    }
+     @media(max-width: 1100px){
+        width: 480px;
+    }
+    @media(max-width: 800px){
+        width: 350px;
+        font-size: 36px;
+    }
 `
 
 const SubOfferText = styled.h2`
     font-size: 32px;
     font-weight: 500;
+    @media(max-width: 1500px){
+        font-size: 28px;
+    }
+    @media(max-width: 1100px){
+        font-size: 22px;
+    }
 `
 
 export default OfferComponent;

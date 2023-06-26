@@ -24,7 +24,7 @@ function OfferBanner({changeModalFlag}:Props){
 
 
 const ExternalWrapper = styled.div`
-    margin-top: 60px;
+    margin-top: 40px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
     box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -36,12 +36,29 @@ const ExternalWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
+    @media(max-width: 1500px){
+        width: 650px;
+    }
+    @media(max-width: 800px){
+        position: relative;
+        width: 100%;
+    }
 `
 
 const TitleText = styled.p`
     font-size: 35px;
     font-weight: bold;
+    @media(max-width: 1500px){
+        font-size: 28px;
+    }
+     @media(max-width: 1100px){
+        font-size: 28px;
+        width: 400px;
+    }
+     @media(max-width: 800px){
+        font-size: 24px;
+        width: 300px;
+    }
 `
 
 const OptionsListWrapper = styled.div`
@@ -54,6 +71,16 @@ const OptionsElem = styled.p`
     :last-child{
         margin-bottom: 0px;
     }
+    @media(max-width: 1500px){
+        font-size: 18px;
+    }
+    @media(max-width: 800px){
+        font-size: 15px;
+    }
+    @media(max-width: 800px){
+        font-size: 15px;
+    }
+   
 `
 
 const ContactButtonWrapper = styled.div`

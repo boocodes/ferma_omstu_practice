@@ -33,6 +33,15 @@ const ExternalWrapper = styled.div<IExternalWrapper>`
     background-color: ${props=>props.backgroundColor || 'none'};
     position: relative;
     justify-content: space-between;
+    @media(max-width: 1500px){
+        padding: 40px 100px;
+    }
+    @media(max-width: 1100px){
+        padding: 40px 50px;
+    }
+    @media(max-width: 600px){
+        padding: 40px 30px;
+    }
 `
 
 
