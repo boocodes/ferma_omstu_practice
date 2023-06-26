@@ -83,22 +83,48 @@ const MainContent = styled.div`
     margin-top: 70px;   
     font-family: 'Muller';
     margin-bottom: 50px;
+    @media(max-width: 1500px){
+        padding: 0px 100px;
+    }
+    @media(max-width: 1100px){
+        padding: 0px 50px;
+        margin-top: 50px;
+    }
 `
 
 const PolicyTitleText = styled.h1`
     font-size: 48px;
     margin-bottom: 20px;
+    @media(max-width: 1100px){
+        font-size: 32px;
+    }
+    @media(max-width: 800px){
+        font-size: 26px;
+    }
 `
 
 const SecondSizeTypeText = styled.p`
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 15px;
+    @media(max-width: 1100px){
+        font-size: 18px;
+    }
+    @media(max-width: 800px){
+        font-size: 14px;
+    }
 `
 const ThirdSizeTypeText = styled.p`
     font-weight: 400;
     font-size: 18px;
     margin-left: 10px;
+    @media(max-width: 1100px){
+        font-size: 14px;
+    }
+    @media(max-width: 800px){
+        font-size: 12px;
+    }
+    
 `
 
 const ParagraphWrapper = styled.div`
@@ -111,7 +137,12 @@ const ParagraphOptionsList = styled.ul`
     margin-left: 55px;
 `
 const ParagraphOptionElem = styled.li`
-
+    @media(max-width: 1100px){
+        font-size: 14px;
+    }
+    @media(max-width: 800px){
+        font-size: 12px;
+    }
 `
 
 const UnderlineText = styled.p`

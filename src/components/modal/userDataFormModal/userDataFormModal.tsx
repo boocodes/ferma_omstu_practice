@@ -109,9 +109,8 @@ const ExternalWrapper = styled.div`
 const Overlay = styled.div`
     z-index: 4;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: gray;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
     opacity: 0.6;
@@ -120,7 +119,8 @@ const Overlay = styled.div`
 const TitleWrapper = styled.div`
     display: flex;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+    justify-content: space-between; 
 `
 const CloseModalIcon = styled.img`
     width: 15px;
@@ -130,6 +130,9 @@ const CloseModalIcon = styled.img`
 const TitleText = styled.h1`
     font-size: 24px;
     margin-right: 30px;
+    @media(max-width: 1100px){
+        font-size: 16px;
+    }
 `
 
 const UserDataForm = styled.form`
@@ -151,6 +154,9 @@ const UsernameInput = styled.input<IUsernameInput>`
     font-weight: 400;
     padding: 15px 0px 15px 30px; 
     border: 1px solid ${props => props.usernameInputErrorFlag ? "red" : "black"};
+    @media(max-width: 1100px){
+        font-size: 14px;
+    }
 `
 
 const UsernameInputHelpWindow = styled.div`
@@ -163,12 +169,16 @@ const UsernameInputHelpWindow = styled.div`
     background-repeat: no-repeat;
   
     padding: 5px 10px;
+    @media(max-width: 1100px){
+        margin-top: 50px;
+    }
 `
 
 const UsernameInputHelpText = styled.p`
     font-size: 12px;
     color: red;
     padding-top: 10px;
+    
 `
 
 
@@ -180,6 +190,9 @@ const UserphoneInput = styled(InputMask)`
     font-size: 20px;
     font-weight: 400;
     padding: 15px 0px 15px 30px; 
+    @media(max-width: 1100px){
+        font-size: 14px;
+    }
 `
 const SubmitUserDataFormButton = styled.input`
     background-color: black;
@@ -192,6 +205,9 @@ const SubmitUserDataFormButton = styled.input`
     cursor: pointer;
     font-size: 20px;
     font-weight: 700;
+    @media(max-width: 1100px){
+        font-size: 16px;
+    }
 `
 
 const NotActiveSubmitUserDataFormButton = styled.input`
@@ -205,6 +221,9 @@ const NotActiveSubmitUserDataFormButton = styled.input`
     outline: none;
     font-size: 20px;
     font-weight: 700;
+    @media(max-width: 1100px){
+        font-size: 16px;
+    }
 `
 
 

@@ -56,7 +56,6 @@ const Overlay = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: gray;
     top: 0;
     left: 0;
     opacity: 0.6;
@@ -88,6 +87,9 @@ const SuccessText = styled.p`
     text-align: center;
     font-size: 28px;
     font-weight: bold;
+    @media(max-width: 1100px){
+        font-size: 22px;
+    }
 `
 
 

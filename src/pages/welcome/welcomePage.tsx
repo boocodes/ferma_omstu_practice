@@ -72,7 +72,8 @@ const BackgroundImageWrapper = styled.div`
 
 
 const BlackFadeBackgroundOverlay = styled.div`
-    background: linear-gradient(89.43deg, #151922 16.15%, rgba(28, 29, 33, 0.5) 42.91%, rgba(28, 29, 33, 0) 69.66%);
+    background: linear-gradient(89.43deg, #151922 31.42%, rgba(28, 29, 33, 0.5) 53.39%, rgba(28, 29, 33, 0) 75.36%);
+
     background-size: cover;
     position: absolute;
     top: 0;
