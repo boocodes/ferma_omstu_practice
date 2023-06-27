@@ -3,6 +3,7 @@ import Header from "../../ui/header/header";
 import React, {useEffect, useState} from "react";
 import Offer from "../../components/offer/offer";
 import UserFormModal from "../../components/modal/userFormModal/userFormModal";
+import SuccessModal from "../../components/modal/successModal/successModal";
 
 
 interface Props{
@@ -36,7 +37,7 @@ function WelcomePage({}:Props){
                     null
                     :
                     successModalWindowFlag ?
-                        null
+                        <SuccessModal changeModalSuccessFlag={setSuccessModalWindowFlag} changeModalFlag={setModalWindowFlag}/>
                         :
                         <UserFormModal changeModalSuccessFlag={setSuccessModalWindowFlag} changeModalFlag={setModalWindowFlag}/>
             }

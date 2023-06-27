@@ -94,6 +94,7 @@ const GetButton = styled.button`
     font-family: 'Muller';
     cursor: pointer;
     border: none;
+    color: black;
     font-weight: bold;
     border-radius: 10px;
     height: 55px;

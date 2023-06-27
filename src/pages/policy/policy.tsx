@@ -140,7 +140,7 @@ const ParagraphWrapper = styled.div`
     &:last-child{
         margin-bottom: 0px;
     }
-    width: 70%;
+    width: 100%;
     position: relative;
     
 `

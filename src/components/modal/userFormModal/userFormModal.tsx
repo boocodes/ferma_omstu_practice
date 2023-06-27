@@ -51,13 +51,6 @@ function UserFormModal({changeModalFlag, changeModalSuccessFlag}:Props){
 
 
 
-
-
-
-
-
-
-
     return(
         <>
             <Overlay onClick={()=>changeModalFlag(false)}/>
@@ -67,7 +60,7 @@ function UserFormModal({changeModalFlag, changeModalSuccessFlag}:Props){
                         <TitleText>
                             Получите медиаплан<br/> для продвижения автобизнеса
                         </TitleText>
-                        <CloseIcon src={"./images/closeIcon.svg"}/>
+                        <CloseIcon onClick={()=>changeModalFlag(false)} src={"./images/closeIcon.svg"}/>
                     </ModalHeader>
                     <UserDataForm ref={formRef} onSubmit={handleFormSumbit}>
                         <UsernameInput
@@ -233,11 +226,12 @@ const SubmitUserDataFormButton = styled.input`
     background-color: black;
     color: white;
     text-align: center;
-    padding: 20px 0px;
+    padding: 15px 0px;
     border: none;
     border-radius: 10px;
     outline: none;
     cursor: pointer;
+    height: 50px;
     font-size: 20px;
     font-weight: 700;
     @media(max-width: 500px){
@@ -249,10 +243,11 @@ const NotActiveSubmitUserDataFormButton = styled.input`
     color: white;
     cursor: not-allowed;
     text-align: center;
-    padding: 20px 0px;
+    padding: 15px 0px;
     border: none;
     border-radius: 10px;
     outline: none;
+    height: 50px;
     font-size: 20px;
     font-weight: 700;
     @media(max-width: 500px){

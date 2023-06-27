@@ -189,6 +189,7 @@ const RingButton = styled.button`
     cursor: pointer;    
     font-weight: 700;
     padding: 20px;
+    color: black;
     border-radius: 15px;
     border: none;
     outline: none;
