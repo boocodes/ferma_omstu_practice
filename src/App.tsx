@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import WelcomePage from "./pages/welcome/welcome";
+import {Route, Routes} from 'react-router-dom';
+import PolicyPage from "./pages/policy/policy";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route element={<WelcomePage/>} path={"/"}/>
+        <Route path="*" element={<WelcomePage/>}/>
+        <Route path={"/policy"} element={<PolicyPage/>}/>
+      </Routes>
+
   );
 }
 
