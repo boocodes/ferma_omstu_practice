@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {Interface} from "readline";
+import {useEffect, useState} from "react";
 
 
 interface Props{
@@ -10,6 +11,49 @@ interface Props{
 
 
 function Header({windowWidth, backgroundColor}:Props){
+
+
+
+    const [startHourTime, setStartHourTime] = useState(5);
+    const [endHourTime, setEndHourTime] = useState(15);
+
+    const [timeZoneName, setTimeZoneName] = useState<string>("КЛНГ");
+
+    const startTimezone = 2;
+
+    const timeZoneCitiesNames:{ [key: number]: string } = {
+        2: "КЛНГ",
+        3: "МСК",
+        4: "СМР",
+        5: "ЕКБ",
+        6: "ОМСК",
+        7: "КРСН",
+        8: "ИРКТ",
+        9: "ЯКТС",
+        10: "ВЛДВ",
+        11: "МГДН",
+        12: "КМЧТ",
+    }
+
+    useEffect(()=>{
+        const x = new Date(),
+            currentTimeZoneOffsetInHours:number = Math.abs(x.getTimezoneOffset() / 60);
+        if(currentTimeZoneOffsetInHours >= 2 && currentTimeZoneOffsetInHours <= 12){
+            setStartHourTime(startHourTime + (currentTimeZoneOffsetInHours - startTimezone));
+            setEndHourTime(endHourTime + (currentTimeZoneOffsetInHours - startTimezone));
+            setTimeZoneName(timeZoneCitiesNames[currentTimeZoneOffsetInHours]);
+
+        }
+        else{
+            setStartHourTime(startHourTime + 1);
+            setEndHourTime(endHourTime + 1);
+            setTimeZoneName(timeZoneCitiesNames[3]);
+        }
+    }, [])
+
+
+
+
     return(
         <ExternalWrapper backgroundColor={backgroundColor}>
             <MainWrapper>
@@ -36,9 +80,13 @@ function Header({windowWidth, backgroundColor}:Props){
                                     </WorkingDaysText>
                                     <WorkingHoursWrapper>
                                         <WorkingHoursText>
-                                            06:00-15:00
+                                            {startHourTime}:00
+                                            -
+                                            {endHourTime}:00
                                         </WorkingHoursText>
-                                        <TimezoneNameText>МСК</TimezoneNameText>
+                                        <TimezoneNameText>
+                                            {timeZoneName}
+                                        </TimezoneNameText>
                                     </WorkingHoursWrapper>
                                 </WorkGraphicWrapper>
                             </>
