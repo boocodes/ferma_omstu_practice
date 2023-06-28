@@ -71,8 +71,8 @@ const TitleText = styled.p`
         font-size: 18px;
     }
     @media(max-width: 400px){
+        width: 250px;
         
-        width: 100%;
     }
 `
 const ElemList = styled.ul`
