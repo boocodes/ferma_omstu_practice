@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Header from "../../ui/header/header";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import SuccessModal from "../../components/modal/successModal/successModal";
+import UserFormModal from "../../components/modal/userFormModal/userFormModal";
 
 
 interface Props{
@@ -12,6 +14,8 @@ function PolicyPage({}:Props){
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+    const [modalWindowFlag, setModalWindowFlag] = useState(false);
+    const [successModalWindowFlag, setSuccessModalWindowFlag] = useState(false);
 
     function resizeHandler(){
         setWindowWidth(window.innerWidth);
@@ -26,65 +30,76 @@ function PolicyPage({}:Props){
 
 
     return(
-        <ExternalWrapper>
-            <Header backgroundColor={"#1e1d22"} windowWidth={windowWidth}/>
-            <MainContent>
-                <PolicyTitleText>Политика конфиденциальности</PolicyTitleText>
-                <ParagraphWrapper>
-                    <SecondSizeTypeText>1. Общие положения</SecondSizeTypeText>
-                    <ThirdSizeTypeText>
-                        1. 1.1. Настоящая Политика конфидициальности определяет общие условия сбора и обработки<br/>
-                        персональных данных пользователей сайта fermastudio.com, принадлежащего ООО «Ферма»
-                    </ThirdSizeTypeText>
-                    <ThirdSizeTypeText>
-                        2. (далее - ФЕРМА)
-                    </ThirdSizeTypeText>
-                    <ThirdSizeTypeText>
-                        3. 1.2. ФЕРМА осуществляет обработку следующих персональных данных:
-                    </ThirdSizeTypeText>
-                    <ParagraphOptionsList>
-                        <ParagraphOptionElem>полное имя;</ParagraphOptionElem>
-                        <ParagraphOptionElem>адрес электронной почты;</ParagraphOptionElem>
-                        <ParagraphOptionElem>номер мобильного телефона;</ParagraphOptionElem>
-                    </ParagraphOptionsList>
-                </ParagraphWrapper>
-                <ParagraphWrapper>
-                    <SecondSizeTypeText>2. Цели обработки персональных данных</SecondSizeTypeText>
-                    <ThirdSizeTypeText>1. 2.1. Оператор ФЕРМА обрабатывает персональные данные пользователей с целью:</ThirdSizeTypeText>
-                    <ParagraphOptionsList>
-                        <ParagraphOptionElem>предоставления услуг;</ParagraphOptionElem>
-                    </ParagraphOptionsList>
-                </ParagraphWrapper>
-                <ParagraphWrapper>
-                    <SecondSizeTypeText>3. Доступ третьих лиц к персональным данным</SecondSizeTypeText>
-                    <ThirdSizeTypeText>1. 3.1. Оператор ФЕРМА может передать персональные данные пользователей третьей стороне</ThirdSizeTypeText>
-                    <ThirdSizeTypeText>2. в следующих случаях:</ThirdSizeTypeText>
-                    <ParagraphOptionsList>
-                        <ParagraphOptionElem>если передача персональных данных необходима для услуги;</ParagraphOptionElem>
-                        <ParagraphOptionElem>если пользователь дал согласие на осуществление передачи своих данных третьей стороне;</ParagraphOptionElem>
-                    </ParagraphOptionsList>
-                </ParagraphWrapper>
-                <ParagraphWrapper>
-                    <SecondSizeTypeText>4. Обязанности оператора ФЕРМА по защите персональных данных</SecondSizeTypeText>
-                    <ThirdSizeTypeText>
-                        1. 4.1. Оператор ФЕРМА обязан принимать необходимые организационные и технические меры для<br/>
-                        обеспечения конфиденциальности, целостности и доступности персональных данных пользователей.
-                    </ThirdSizeTypeText>
-                    <ThirdSizeTypeText>
-                        2. 4.2. Оператор ФЕРМА обязан своевременно производить оценку соответствия требованиям<br/>
-                        законодательства РФ в области защиты информации
-                    </ThirdSizeTypeText>
-                </ParagraphWrapper>
-                <ParagraphWrapper>
-                    <SecondSizeTypeText>5. Обратная связь</SecondSizeTypeText>
-                    <ThirdSizeTypeText>1. 5.1. Все предложения и вопросы по использованию сайта следует направлять в службу поддержки</ThirdSizeTypeText>
-                    <ThirdSizeTypeText>
-                        2. по адресу электронной почты
-                        <UnderlineText>support@ferma.agency</UnderlineText>
-                    </ThirdSizeTypeText>
-                </ParagraphWrapper>
-            </MainContent>
-        </ExternalWrapper>
+        <>
+            {
+                !modalWindowFlag ?
+                    null
+                    :
+                    successModalWindowFlag ?
+                        <SuccessModal changeModalSuccessFlag={setSuccessModalWindowFlag} changeModalFlag={setModalWindowFlag}/>
+                        :
+                        <UserFormModal changeModalSuccessFlag={setSuccessModalWindowFlag} changeModalFlag={setModalWindowFlag}/>
+            }
+            <ExternalWrapper>
+                <Header changeModalFlag={setModalWindowFlag} backgroundColor={"#1e1d22"} windowWidth={windowWidth}/>
+                <MainContent>
+                    <PolicyTitleText>Политика конфиденциальности</PolicyTitleText>
+                    <ParagraphWrapper>
+                        <SecondSizeTypeText>1. Общие положения</SecondSizeTypeText>
+                        <ThirdSizeTypeText>
+                            1. 1.1. Настоящая Политика конфидициальности определяет общие условия сбора и обработки<br/>
+                            персональных данных пользователей сайта fermastudio.com, принадлежащего ООО «Ферма»
+                        </ThirdSizeTypeText>
+                        <ThirdSizeTypeText>
+                            2. (далее - ФЕРМА)
+                        </ThirdSizeTypeText>
+                        <ThirdSizeTypeText>
+                            3. 1.2. ФЕРМА осуществляет обработку следующих персональных данных:
+                        </ThirdSizeTypeText>
+                        <ParagraphOptionsList>
+                            <ParagraphOptionElem>полное имя;</ParagraphOptionElem>
+                            <ParagraphOptionElem>адрес электронной почты;</ParagraphOptionElem>
+                            <ParagraphOptionElem>номер мобильного телефона;</ParagraphOptionElem>
+                        </ParagraphOptionsList>
+                    </ParagraphWrapper>
+                    <ParagraphWrapper>
+                        <SecondSizeTypeText>2. Цели обработки персональных данных</SecondSizeTypeText>
+                        <ThirdSizeTypeText>1. 2.1. Оператор ФЕРМА обрабатывает персональные данные пользователей с целью:</ThirdSizeTypeText>
+                        <ParagraphOptionsList>
+                            <ParagraphOptionElem>предоставления услуг;</ParagraphOptionElem>
+                        </ParagraphOptionsList>
+                    </ParagraphWrapper>
+                    <ParagraphWrapper>
+                        <SecondSizeTypeText>3. Доступ третьих лиц к персональным данным</SecondSizeTypeText>
+                        <ThirdSizeTypeText>1. 3.1. Оператор ФЕРМА может передать персональные данные пользователей третьей стороне</ThirdSizeTypeText>
+                        <ThirdSizeTypeText>2. в следующих случаях:</ThirdSizeTypeText>
+                        <ParagraphOptionsList>
+                            <ParagraphOptionElem>если передача персональных данных необходима для услуги;</ParagraphOptionElem>
+                            <ParagraphOptionElem>если пользователь дал согласие на осуществление передачи своих данных третьей стороне;</ParagraphOptionElem>
+                        </ParagraphOptionsList>
+                    </ParagraphWrapper>
+                    <ParagraphWrapper>
+                        <SecondSizeTypeText>4. Обязанности оператора ФЕРМА по защите персональных данных</SecondSizeTypeText>
+                        <ThirdSizeTypeText>
+                            1. 4.1. Оператор ФЕРМА обязан принимать необходимые организационные и технические меры для<br/>
+                            обеспечения конфиденциальности, целостности и доступности персональных данных пользователей.
+                        </ThirdSizeTypeText>
+                        <ThirdSizeTypeText>
+                            2. 4.2. Оператор ФЕРМА обязан своевременно производить оценку соответствия требованиям<br/>
+                            законодательства РФ в области защиты информации
+                        </ThirdSizeTypeText>
+                    </ParagraphWrapper>
+                    <ParagraphWrapper>
+                        <SecondSizeTypeText>5. Обратная связь</SecondSizeTypeText>
+                        <ThirdSizeTypeText>1. 5.1. Все предложения и вопросы по использованию сайта следует направлять в службу поддержки</ThirdSizeTypeText>
+                        <ThirdSizeTypeText>
+                            2. по адресу электронной почты
+                            <UnderlineText>support@ferma.agency</UnderlineText>
+                        </ThirdSizeTypeText>
+                    </ParagraphWrapper>
+                </MainContent>
+            </ExternalWrapper>
+        </>
     )
 }
 

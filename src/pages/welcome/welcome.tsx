@@ -42,7 +42,7 @@ function WelcomePage({}:Props){
                         <UserFormModal changeModalSuccessFlag={setSuccessModalWindowFlag} changeModalFlag={setModalWindowFlag}/>
             }
             <ExternalWrapper windowWidth={windowWidth}>
-                <Header windowWidth={windowWidth}/>
+                <Header changeModalFlag={setModalWindowFlag} windowWidth={windowWidth}/>
                 <MainContent>
                     <Offer changeModalFlag={setModalWindowFlag}/>
                 </MainContent>

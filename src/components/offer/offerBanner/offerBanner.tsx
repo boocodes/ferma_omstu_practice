@@ -41,10 +41,11 @@ const ExternalWrapper = styled.div`
         width: 700px;
     }
     @media(max-width: 1240px){
-        width: 100%;
+        width: 370px;
     }
     @media(max-width: 550px){
         margin-top: 30px;
+        width: 100%;
     }
     
 `
@@ -64,24 +65,29 @@ const TitleText = styled.p`
     font-size: 36px;
     font-weight: 700;
     @media(max-width: 1240px){
-        font-size: 20px;
+        font-size: 18px;
+        width: 290px;
     }
     @media(max-width: 550px){
         width: 300px;
-        font-size: 18px;
+        font-size: 20px;
     }
     @media(max-width: 400px){
-        width: 250px;
-        
+        width: 100%;
+       
     }
 `
 const ElemList = styled.ul`
     margin-top: 15px;
     margin-bottom: 30px;
-    margin-left: 20px;
+    margin-left: 35px;
+    @media(max-width: 1240px){
+        margin-left: 25px;
+    }
     @media(max-width: 550px){
         margin-bottom: 20px;
         margin-top: 10px;
+        margin-left: 20px;
     }
     
 `
@@ -99,7 +105,7 @@ const ElemText = styled.li`
     }
     @media(max-width: 550px){
         font-size: 12px;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
         width: 97%;
     }
 `
@@ -113,12 +119,12 @@ const GetButton = styled.button`
     border-radius: 10px;
     height: 55px;
     @media(max-width: 1240px){
-        font-size: 18px;
-        height: 45px;
+        font-size: 15px;
+        height: 40px;
     }
     @media(max-width: 550px){
         font-size: 15px;
-        height: 35px;
+        height: 30px;
     }
     
 `

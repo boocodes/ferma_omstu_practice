@@ -7,10 +7,11 @@ import {useEffect, useState} from "react";
 interface Props{
     windowWidth: number;
     backgroundColor?: string;
+    changeModalFlag: (flag: boolean) => void;
 }
 
 
-function Header({windowWidth, backgroundColor}:Props){
+function Header({windowWidth, backgroundColor, changeModalFlag}:Props){
 
 
 
@@ -67,12 +68,12 @@ function Header({windowWidth, backgroundColor}:Props){
                         windowWidth >= 1000 ?
                             <>
                                 <PhoneNumberWrapper>
-                                    <PhoneNumberPlainText>
+                                    <PhoneNumberPlainTextLink href="tel:+73812308136">
                                         +7 (3812)
                                         <PhoneNumberBoldText>
                                             308-136
                                         </PhoneNumberBoldText>
-                                    </PhoneNumberPlainText>
+                                    </PhoneNumberPlainTextLink>
                                 </PhoneNumberWrapper>
                                 <WorkGraphicWrapper>
                                     <WorkingDaysText>
@@ -94,7 +95,7 @@ function Header({windowWidth, backgroundColor}:Props){
                             :
                             null
                     }
-                    <RingButton>
+                    <RingButton onClick={()=>changeModalFlag(true)}>
                         Позвоним бесплатно
                     </RingButton>
                 </ContactWrapper>
@@ -164,8 +165,11 @@ const LogoWrapper = styled.div`
 
 const LogoImage = styled.img`
     width: 200px;
+    @media(max-width: 1050px){
+        width: 150px;
+    }
     @media(max-width: 750px){
-        width: 140px;
+        width: 120px;
     }
     @media(max-width: 400px){
         width: 100px;
@@ -185,8 +189,10 @@ const PhoneNumberWrapper = styled.div`
     display: flex;
     align-items: center;
 `
-const PhoneNumberPlainText = styled.p`
+const PhoneNumberPlainTextLink = styled.a`
     font-size: 24px;
+    text-decoration: none;
+    color: white;
     margin-right: 15px;
     @media(max-width: 1260px){
         font-size: 20px;
@@ -198,6 +204,7 @@ const PhoneNumberPlainText = styled.p`
 const PhoneNumberBoldText = styled.span`
     font-weight: bold;
     margin-left: 5px;
+    
 `
 
 const WorkGraphicWrapper = styled.div`
@@ -222,6 +229,7 @@ const WorkingHoursText = styled.p`
     @media(max-width: 1260px){
         font-size: 10px;
     }
+    
 `
 const TimezoneNameText = styled.p`
     font-size: 12px;

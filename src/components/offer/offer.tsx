@@ -39,13 +39,14 @@ const TitleText = styled.h1`
         font-size: 55px;
     }
     @media(max-width: 1150px){
-        font-size: 36px;
+        font-size: 40px;
     }
     @media(max-width: 900px){
         width: 350px;
     }
     @media(max-width: 550px){
         font-size: 28px;
+        
         width: 250px;
     }
 `

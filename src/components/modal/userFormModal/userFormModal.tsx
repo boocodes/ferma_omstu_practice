@@ -193,7 +193,7 @@ interface IUsernameInput{
 
 const UsernameInput = styled.input<IUsernameInput>`
     border: 1px solid #000000;
-    margin-bottom: 22px;
+    margin-bottom: 15px;
     border-radius: 10px;
     outline: none;
     font-size: 18px;
@@ -207,7 +207,7 @@ const UsernameInput = styled.input<IUsernameInput>`
 
 const UserphoneInput = styled(InputMask)`
     border: 1px solid #000000;  
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
     outline: none;
     font-size: 20px;
