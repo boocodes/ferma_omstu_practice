@@ -13,15 +13,15 @@ function OfferBanner({changeModalFlag}:Props){
                 <TitleText>
                     Ответье на несколько вопросов и получите:
                 </TitleText>
-                <ElemList>
+                <ElemList >
                     <ElemText>
-                        1. Бесплатный аудит рекламной компании и сайта
+                        Бесплатный аудит рекламной компании и сайта
                     </ElemText>
                     <ElemText>
-                        2. Расчет бюджета для эффективной рекламной компании
+                        Расчет бюджета для эффективной рекламной компании
                     </ElemText>
                     <ElemText>
-                        3. Рекомендации по повышению конверсии
+                        Рекомендации по повышению конверсии
                     </ElemText>
                 </ElemList>
                 <GetButton onClick={()=>changeModalFlag(true)}>
@@ -36,16 +36,17 @@ function OfferBanner({changeModalFlag}:Props){
 const ExternalWrapper = styled.div`
     width: 820px;
     margin-top: 50px;
+    
     @media(max-width: 1700px){
         width: 700px;
     }
     @media(max-width: 1240px){
-        width: 370px;
+        width: 100%;
     }
-    @media(max-width: 450px){
-        width: 300px;
-        position: relative;
+    @media(max-width: 550px){
+        margin-top: 30px;
     }
+    
 `
 
 const MainContent = styled.div`
@@ -65,17 +66,28 @@ const TitleText = styled.p`
     @media(max-width: 1240px){
         font-size: 20px;
     }
-    @media(max-width: 400px){
+    @media(max-width: 550px){
+        width: 300px;
         font-size: 18px;
     }
+    @media(max-width: 400px){
+        
+        width: 100%;
+    }
 `
-const ElemList = styled.div`
+const ElemList = styled.ul`
     margin-top: 15px;
     margin-bottom: 30px;
-    margin-left: 5px;
+    margin-left: 20px;
+    @media(max-width: 550px){
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    
 `
-const ElemText = styled.p`
+const ElemText = styled.li`
     font-size: 22px;
+    list-style: decimal;
     font-weight: 500;
     margin-bottom: 20px;
     &:last-child{
@@ -85,8 +97,10 @@ const ElemText = styled.p`
         font-size: 14px;
         margin-bottom: 10px;
     }
-    @media(max-width: 400px){
+    @media(max-width: 550px){
         font-size: 12px;
+        margin-bottom: 4px;
+        width: 97%;
     }
 `
 const GetButton = styled.button`
@@ -101,6 +115,10 @@ const GetButton = styled.button`
     @media(max-width: 1240px){
         font-size: 18px;
         height: 45px;
+    }
+    @media(max-width: 550px){
+        font-size: 15px;
+        height: 35px;
     }
     
 `

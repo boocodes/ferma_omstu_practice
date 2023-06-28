@@ -15,7 +15,7 @@ function UserFormModal({changeModalFlag, changeModalSuccessFlag}:Props){
     const [usernameValue, setUsernameValue] = useState("");
     const [phoneValue, setPhoneValue] = useState("");
     const [buttonActiveFlag, setButtonActiveFlag] = useState(false);
-    const [usernameInputErrorFlag, setUsernameInputErrorFlag] = useState(true);
+    const [usernameInputErrorFlag, setUsernameInputErrorFlag] = useState(false);
 
 
 
@@ -32,13 +32,24 @@ function UserFormModal({changeModalFlag, changeModalSuccessFlag}:Props){
         else{
             setUsernameInputErrorFlag(true);
         }
+
     }, [usernameValue, phoneValue])
 
+    useEffect(()=>{
+        setUsernameInputErrorFlag(false);
+    }, [])
+
 
     // @ts-ignore
-    const passwordHandleInput = ({ target: { value } }) => setPhoneValue(value)
+    const phoneHandleInput = ({ target: { value } }) => {
+        if(usernameInputErrorFlag) return;
+        setPhoneValue(value)
+    }
     // @ts-ignore
-    const usernameHandleInput = ({ target: { value } }) => setUsernameValue(value)
+    const usernameHandleInput = ({ target: { value } }) => {
+        console.log(1)
+        setUsernameValue(value)
+    }
 
 
 
@@ -82,7 +93,7 @@ function UserFormModal({changeModalFlag, changeModalSuccessFlag}:Props){
                             mask='+7 (999) 999-99-99'
                             placeholder={"+7 (___) ___-__-__"}
                             value={phoneValue}
-                            onChange={passwordHandleInput}
+                            onChange={phoneHandleInput}
                         />
                         {buttonActiveFlag ?
                             <SubmitUserDataFormButton type={"submit"} value={"Получить"}/> : <NotActiveSubmitUserDataFormButton type={"submit"} disabled={true} value={"Получить"}/>
@@ -211,10 +222,13 @@ const UsernameInputHelpWindow = styled.div`
     margin-top: 55px;
     margin-left: 20px;
     background-image: url('./images/helpMessage.svg');
-    height: 100px;
+    height: 35px;
     z-index: 5;
     background-repeat: no-repeat;
     padding: 5px 10px;
+    @media(max-width: 500px){
+        margin-top: 50px;
+    }
 `
 const UsernameInputHelpText = styled.p`
     font-size: 12px;

@@ -87,6 +87,7 @@ const MainContent = styled.div`
     }
     @media(max-width: 550px){
         width: 450px;
+        padding-top: 10px;
     }
     @media(max-width: 500px){
         width: 400px;

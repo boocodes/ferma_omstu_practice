@@ -12,10 +12,10 @@ function Offer({changeModalFlag}:Props){
         <ExternalWrapper>
             <MainContent>
                 <TitleText>
-                    Нужны клиенты для автодилера ?
+                    Нужны клиенты для автодилера?
                 </TitleText>
                 <SubTitleText>
-                    5 лет опыта с автотематикой?
+                    5 лет опыта с автотематикой!
                 </SubTitleText>
                 <OfferBanner changeModalFlag={changeModalFlag}/>
             </MainContent>
@@ -44,9 +44,9 @@ const TitleText = styled.h1`
     @media(max-width: 900px){
         width: 350px;
     }
-    @media(max-width: 400px){
+    @media(max-width: 550px){
         font-size: 28px;
-        width: 100%;
+        width: 250px;
     }
 `
 const SubTitleText = styled.h3`
@@ -59,10 +59,14 @@ const SubTitleText = styled.h3`
     @media(max-width: 1150px){
         font-size: 22px;
     }   
+    @media(max-width: 550px){
+        margin-top: 10px;
+        font-size: 16px;
+    }
     @media(max-width: 400px){
-        font-size: 18px;
         width: 100%;
     }
+    
     
 `
 

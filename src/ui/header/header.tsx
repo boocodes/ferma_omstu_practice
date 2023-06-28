@@ -252,8 +252,8 @@ const RingButton = styled.button`
         padding: 15px;
     }
     @media(max-width: 500px){
-        font-size: 13px;
-        padding: 10px 15px;
+        font-size: 12px;
+        padding: 12px 15px;
         border-radius: 10px;
     }
 `
