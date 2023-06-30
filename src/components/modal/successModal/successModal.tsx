@@ -42,9 +42,9 @@ function SuccessModal({changeModalSuccessFlag, changeModalFlag}:Props){
 
 const ExternalWrapper = styled.div`
     position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
     padding: 40px 30px;
     border-radius: 20px;
     background-color: white;
@@ -64,8 +64,8 @@ const ExternalWrapper = styled.div`
 `
 
 const Overlay = styled.div`
-    position: absolute;
-    width: 100vw;
+    position: fixed;
+    width: 100%;
     height: 100vh;
     top: 0;
     left: 0;

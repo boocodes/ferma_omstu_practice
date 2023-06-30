@@ -63,8 +63,8 @@ interface IExternalWrapper{
 const ExternalWrapper = styled.div<IExternalWrapper>`
     background-color: #151922;
     background: url('./images/${props=> props.windowWidth <= 700 ? "mobileBackground" : props.windowWidth <= 1200 ? "laptopBackground" : "desktopBackground"}.png');
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    min-height: 100vh;
     position: absolute;
     background-position: center;
     background-size: cover;

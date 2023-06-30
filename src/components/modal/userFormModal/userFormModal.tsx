@@ -44,7 +44,6 @@ function UserFormModal({changeModalSuccessFlag, changeModalFlag}:Props){
 
     // @ts-ignore
     const phoneHandleInput = ({ target: { value } }) => {
-        if(usernameInputErrorFlag) return;
         setPhoneValue(value)
     }
     // @ts-ignore
@@ -115,7 +114,7 @@ const ExternalWrapper = styled.div`
     position: absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%, -50%);
+    transform:translate(-50%, 50%);
     padding: 38px 28px;
     border-radius: 20px;
     background-color: white;
@@ -132,9 +131,9 @@ const ExternalWrapper = styled.div`
     }
 `
 const Overlay = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     top: 0;
     left: 0;
     background-color: gray;
@@ -218,7 +217,7 @@ const ActiveSubmitFormInput = styled.input`
     font-weight: 700;
     background-color: #1E1F24;
     border: none;
-    border-radius: 16px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
     padding: 20px;

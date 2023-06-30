@@ -28,6 +28,7 @@ const ExternalWrapper = styled.div`
     font-family: 'Muller';
     color: #FDFCF9;
     margin-top: 80px;
+    padding-bottom: 20px;
     @media(max-width: 850px){
         margin-top: 60px;
     }
