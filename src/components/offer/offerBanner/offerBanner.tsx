@@ -54,7 +54,12 @@ const ExternalWrapper = styled.div`
         width: 100%;
         margin-top: 45px;
     }
-    @media(max-width: 510px){
+    
+    @media(max-width: 460px){
+        margin-top: 20px;
+        padding: 20px 25px 18px 25px;
+    }
+    @media(max-width: 360px){
         margin-top: 20px;
         padding: 18px 12px 18px 12px;
     }
@@ -74,7 +79,7 @@ const TitleText = styled.p`
         width: 328px;
     }
     @media(max-width: 700px){
-        width: 100%;
+        width: 320px;
     }
     @media(max-width: 540px){
         
@@ -96,7 +101,7 @@ const ElemList = styled.ul`
         margin: 20px 0px 20px 25px;
     }
     @media(max-width: 510px){
-        margin: 16px 0px 16px 18px;
+        margin: 16px 0px 16px 25px;
     }
     
     

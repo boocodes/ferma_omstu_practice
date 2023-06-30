@@ -16,7 +16,7 @@ function Button({text}:Props){
 
 const Root = styled.button`
     cursor: pointer;
-    color: black
+    color: #1E1F24;
     background-color: white;
     font-family: 'Muller';
     font-weight: 500;

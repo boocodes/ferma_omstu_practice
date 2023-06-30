@@ -47,7 +47,7 @@ const OfferTitle = styled.h1`
     @media(max-width: 1200px){
         font-size: 42px;
     }
-    @media(max-width: 850px){
+    @media(max-width: 760px){
         width: 344px;
     }   
     @media(max-width: 540px){

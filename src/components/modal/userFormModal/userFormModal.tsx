@@ -230,6 +230,7 @@ const ActiveSubmitFormInput = styled.input`
     @media(max-width: 360px){
         font-size: 16px;
     }
+    height: 62px;
 `
 
 const UsernameInputHelpWindow = styled.div`

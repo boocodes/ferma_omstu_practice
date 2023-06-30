@@ -129,14 +129,18 @@ const ExternalWrapper = styled.div<IExternalWrapper>`
 `
 
 const LogoWrapper = styled.div`
-
+    margin-top: 5px;
 `
 const LogoImage = styled.img`
     width: 250px;
     @media(max-width: 1200px){
         width: 190px;
     }
-    @media(max-width: 510px){
+    
+    @media(max-width: 430px){
+        width: 140px;
+    }
+    @media(max-width: 340px){
         width: 120px;
     }
 `
@@ -202,6 +206,7 @@ const WorkGraphicTimezoneText = styled.p`
 const ContactButtonWrapper = styled.div`
     margin-left: 55px;
     width: 262px;
+    color: black;
     @media(max-width: 1700px){
         width: 241px;
     }

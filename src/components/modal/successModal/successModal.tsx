@@ -45,14 +45,22 @@ const ExternalWrapper = styled.div`
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    padding: 72px 75px 102px 75px;
+    padding: 40px 30px;
     border-radius: 20px;
     background-color: white;
     z-index: 5;
     font-family: 'Muller';
     z-index: 4;
-    
-    
+    width: 500px;
+    @media(max-width: 980px){
+        width: 450px;
+    }
+    @media(max-width: 500px){
+        width: 350px;
+    }
+    @media(max-width: 350px){
+        width: 300px;
+    }
 `
 
 const Overlay = styled.div`
@@ -76,7 +84,6 @@ const ModalHeader = styled.div`
 `
 const CloseIcon = styled.img`
     cursor: pointer;
-    width: 20px;
 `
 const SuccessImageWrapper = styled.div`
     display: flex;
@@ -84,7 +91,7 @@ const SuccessImageWrapper = styled.div`
 `
 
 const SuccessImage = styled.img`
-    width: 260px;
+    width: 150px;
 `
 const SuccessTextWrapper = styled.div`
     display: flex;
@@ -96,7 +103,9 @@ const SuccessText = styled.p`
     text-align: center;
     font-size: 32px;
     font-weight: 700;
-  
+    @media(max-width: 500px){
+        font-size: 15px;
+    }
 `
 
 export default SuccessModal;
